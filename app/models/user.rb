@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :groups
   has_many :messages
   has_many :categories
+
 end
