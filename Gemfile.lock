@@ -79,6 +79,8 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
+    pg (0.18.3)
+    puma (2.13.4)
     rack (2.0.0.alpha)
       json
     rack-test (0.6.3)
@@ -155,6 +157,8 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
+  pg
+  puma
   rails (= 5.0.0.beta3)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
