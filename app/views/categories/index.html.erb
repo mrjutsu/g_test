@@ -1,8 +1,5 @@
 <p id="notice"><%= notice %></p>
 <div class="left-content"></div>
 <div class="main-content">
-  <article class="">
-    <p>Cat 1</p>
-    <p>123 mensajes</p>
-  </article>
+  <%= render partial: 'categories/categories', collection: @categories, as: :category %>
 </div>

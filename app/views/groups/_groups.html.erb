@@ -1,4 +1,4 @@
 <article class="">
   <p><%= group.name %></p>
-  <p><%= group.participants.count == 1 ? ( group.participants.count.to_s + ' persona' ) : ( group.participants.count.to_s + ' personas' ) %></p>
+  <p><%= count_users(group) %></p>
 </article>
