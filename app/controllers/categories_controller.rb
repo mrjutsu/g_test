@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_category, only: [:show, :edit, :update, :destroy, :set_messages]
+  before_action :set_messages, only: :show
 
   # GET /categories
   # GET /categories.json
@@ -65,6 +66,10 @@ class CategoriesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_category
       @category = Category.friendly.find(params[:id])
+    end
+
+    def set_messages
+      @messages = @category.messages.order(created_at: :desc)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

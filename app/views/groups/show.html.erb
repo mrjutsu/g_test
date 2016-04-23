@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
 <div class="left-content"></div>
 <div class="main-content">
-  <!-- mensajes -->
+  <%= render partial: 'messages/messages', collection: @messages, as: :message %>
 </div>

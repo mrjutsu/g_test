@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:show, :edit, :update, :destroy]
+  before_action :set_group, only: [:show, :edit, :update, :destroy, :set_messages]
+  before_action :set_messages, only: :show
 
   # GET /groups
   # GET /groups.json
@@ -65,6 +66,10 @@ class GroupsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_group
       @group = Group.friendly.find(params[:id])
+    end
+
+    def set_messages
+      @messages = @group.messages.order(created_at: :desc)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

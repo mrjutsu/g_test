@@ -1,4 +1,5 @@
 <article class="">
-  <p><%= group.name %></p>
+  <p><%= link_to group.name, group_path(group.slug) %></p>
   <p><%= count_users(group) %></p>
+  <p><%= group_messages(group) %></p>
 </article>
