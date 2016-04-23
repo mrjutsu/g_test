@@ -1,4 +1,5 @@
 <%= form_for(message) do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
   <% if message.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
@@ -11,22 +12,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :body %>
-    <%= f.text_area :body %>
+  <div class="form-group">
+    <%= f.text_area :body, class: "form-control froala-editor" %>
   </div>
 
-  <div class="field">
-    <%= f.label :privacy %>
-    <%= f.number_field :privacy %>
-  </div>
+  <!-- <div class="field">
+    <%#= f.number_field :privacy %>
+  </div> -->
 
-  <div class="field">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.submit 'Crear', class: "btn btn-success" %>
 <% end %>
