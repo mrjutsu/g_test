@@ -9,6 +9,8 @@ class Message < ApplicationRecord
   validates :body, presence: { message: 'El mensaje no puede estar vacío.' }
   # validates :messages_categories, presence: { message: 'El mensaje necesita al menos una categoría.' }
 
+  accepts_nested_attributes_for :messages_categories, :allow_destroy => true, reject_if: :all_blank
+
   scope :public_messages, -> (id) { where(privacy: 0).or( Message.where( privacy: 1, user_id: id ) ).order(created_at: :desc) }
 
   scope :visible_messages, -> (id,ids) { self.public_messages(id) + Message.find( GroupsMessage.groups_messages(ids) ) }

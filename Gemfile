@@ -36,6 +36,7 @@ gem 'friendly_id', '~> 5.1.0'
 gem "twitter-bootstrap-rails"
 gem 'font-awesome-rails'
 gem "wysiwyg-rails"
+gem 'nested_form'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

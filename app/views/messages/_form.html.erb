@@ -1,4 +1,4 @@
-<%= form_for(message) do |f| %>
+<%= nested_form_for(@message) do |f| %>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <% if message.errors.any? %>
     <div id="error_explanation">
@@ -16,6 +16,17 @@
     <%= f.text_area :body, class: "form-control froala-editor" %>
   </div>
 
+  <h3>Categorías</h3>
+  <%= f.fields_for :messages_categories, Category.all do |c| %>
+    <div class="checkbox">
+      <label class="checkbox-inline">
+        <%= c.check_box :category_id, { checked: @message.categories.pluck(:id).include?(c.object.id) }, c.object.id, nil %>
+        <%= c.object.name %>
+      </label>
+    </div>
+  <% end %>
+
+  <h3>Visibilidad</h3>
   <div class="radio">
     <label>
       <%= f.radio_button :privacy, 'visible' %>
