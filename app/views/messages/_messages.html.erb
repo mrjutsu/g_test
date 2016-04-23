@@ -1,0 +1,9 @@
+<article class="post">
+  <span><%= message.user.name.nil? ? 'Nombre no disponible' : message.user.name %></span>
+  <span></span>
+  <% message.categories.each do |c| %>
+    <span class="category"><%= c.name %></span>
+  <% end %>
+  <%= message.body.html_safe %>
+  <p><%= time_ago_in_words(message.created_at) %></p>
+</article>

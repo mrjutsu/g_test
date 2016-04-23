@@ -157,10 +157,10 @@ cats = [
   { category_id: features, message_id: 18 },
   { category_id: random_cat, message_id: 18 },
   { category_id: features, message_id: 19 },
-  { category_id: random, message_id: 20 },
-  { category_id: random, message_id: 21 },
-  { category_id: random, message_id: 22 },
-  { category_id: random, message_id: 23 },
-  { category_id: random, message_id: 24 },
+  { category_id: random_cat, message_id: 20 },
+  { category_id: random_cat, message_id: 21 },
+  { category_id: random_cat, message_id: 22 },
+  { category_id: random_cat, message_id: 23 },
+  { category_id: random_cat, message_id: 24 },
 ]
 MessagesCategory.create( cats )

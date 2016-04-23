@@ -4,7 +4,8 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all
+    @messages = Message.visible_messages( current_user.id ,current_user.joined_groups.pluck(:id) ).uniq
+    # @messages = Message.public_messages
   end
 
   # GET /messages/1
