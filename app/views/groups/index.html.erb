@@ -1,7 +1,4 @@
 <p id="notice"><%= notice %></p>
 <div class="groups">
-  <article class="">
-    <p>Grupo 1</p>
-    <p>123 personas</p>
-  </article>
+  <%= render partial: 'groups/groups', collection: @groups, as: :group %>
 </div>
