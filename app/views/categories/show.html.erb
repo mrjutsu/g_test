@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
-<div class="left-content"></div>
+<div class="left-content">
+  <%= link_to 'Editar Categoría', edit_category_path( @category.slug ) %>
+  <h3><%= @category.name %></h3>
+  <p><%= count_messages( @category ) %></p>
+</div>
 <div class="main-content">
   <%= render partial: 'messages/messages', collection: @messages, as: :message %>
 </div>
