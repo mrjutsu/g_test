@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :messages, only: :create
+  resources :messages, only: [:create, :index]
   resources :categories
   resources :groups
 
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     get :sign_in, to: 'devise/sessions#new'
     get :sign_out, to: 'devise/sessions#destroy'
 
-    root to: 'messages#index'
+    root to: 'devise/sessions#new'
   end
 
 end
