@@ -4,8 +4,7 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.visible_messages( current_user.id ,current_user.joined_groups.pluck(:id) ).uniq
-    # @messages = Message.public_messages
+    @messages = Message.feed( current_user.id, current_user.joined_groups.pluck(:id) )
   end
 
   # GET /messages/1
@@ -70,6 +69,9 @@ class MessagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def message_params
-      params.require(:message).permit(:body, :privacy, :user_id, messages_categories_attributes: [:category_id, :_destroy])
+      params.require(:message).permit(:body, :privacy, :user_id,
+        messages_categories_attributes: [:category_id, :_destroy],
+        groups_messages_attributes: [:group_id, :_destroy],
+      )
     end
 end
