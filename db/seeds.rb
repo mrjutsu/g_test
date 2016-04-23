@@ -38,7 +38,7 @@ categories = [
   { name: "Random", user_id: jean },
   { name: "Design", user_id: jean },
 ]
-Category. create( categories )
+Category.create( categories )
 features = Category.find(1).id
 bugs = Category.find(2).id
 fixes = Category.find(3).id
