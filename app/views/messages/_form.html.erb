@@ -16,9 +16,22 @@
     <%= f.text_area :body, class: "form-control froala-editor" %>
   </div>
 
+  <div class="radio">
+    <label>
+      <%= f.radio_button :privacy, 'visible' %>
+      Público
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      <%= f.radio_button :privacy, 'invisible' %>
+      Privado
+    </label>
+  </div>
+
   <!-- <div class="field">
     <%#= f.number_field :privacy %>
   </div> -->
 
-  <%= f.submit 'Crear', class: "btn btn-success" %>
+  <%= f.submit 'Guardar', class: "btn btn-success" %>
 <% end %>
