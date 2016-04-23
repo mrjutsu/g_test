@@ -1,11 +1,11 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:show, :edit, :update, :destroy, :set_messages]
-  before_action :set_messages, only: :show
+  before_action :set_group, only: [:show, :edit, :update, :destroy, :set_messages, :join, :leave]
+  before_action :set_messages, only: [:show]
 
   # GET /groups
   # GET /groups.json
   def index
-    @groups = Group.all
+    @groups = Group.all.order(:name)
   end
 
   # GET /groups/1
@@ -60,6 +60,17 @@ class GroupsController < ApplicationController
       format.html { redirect_to groups_url, notice: 'Group was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def join
+    @group.join_group( current_user.id )
+    redirect_to group_path( @group.slug )
+  end
+
+  def leave
+    puts @group.inspect
+    @group.leave_group( current_user.id )
+    redirect_to group_path( @group.slug )
   end
 
   private

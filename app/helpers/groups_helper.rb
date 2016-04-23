@@ -20,4 +20,12 @@ module GroupsHelper
     end
   end
 
+  def join_leave_group group
+    if current_user.joined_groups.include? group
+      link_to 'Salir Del Grupo', leave_group_path( group.slug ), method: :delete
+    else
+      link_to 'Unirse Al Grupo', join_group_path( group.slug ), method: :post
+    end
+  end
+
 end

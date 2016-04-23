@@ -2,7 +2,14 @@ Rails.application.routes.draw do
 
   resources :messages, only: [:new, :create, :index]
   resources :categories
-  resources :groups
+
+  resources :groups do
+    member do
+      post :join, to: 'groups#join'
+
+      delete :leave, to: 'groups#leave'
+    end
+  end
 
   devise_for :users, controllers: { registrations: 'registrations' }
 

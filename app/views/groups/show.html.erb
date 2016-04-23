@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
-<div class="left-content"></div>
+<div class="left-content">
+  <%= link_to 'Editar Grupo', edit_group_path( @group.slug ) %>
+  <h3><%= @group.name %></h3>
+  <p>Creado por: <%= @group.user.name %></p>
+  <p><%= count_users( @group ) %></p>
+  <%= join_leave_group( @group ) %>
+</div>
 <div class="main-content">
   <%= render partial: 'messages/messages', collection: @messages, as: :message %>
 </div>
