@@ -2,7 +2,7 @@
 <div class="left-content">
   <%= link_to 'Editar Grupo', edit_group_path( @group.slug ) %>
   <h3><%= @group.name %></h3>
-  <p>Creado por: <%= @group.user.name %></p>
+  <p>Creado por: <%= link_to @group.user.name, profile_path( @group.user_id ) %></p>
   <p><%= count_users( @group ) %></p>
   <%= join_leave_group( @group ) %>
 </div>

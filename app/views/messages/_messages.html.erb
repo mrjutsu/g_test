@@ -1,5 +1,5 @@
 <article class="post">
-  <span><%= message.user.name.nil? ? 'Nombre no disponible' : message.user.name %></span>
+  <span><%= message.user.name.nil? ? 'Nombre no disponible' : ( link_to message.user.name, profile_path( message.user_id ) ) %></span>
   <span></span>
   <% message.categories.each do |c| %>
     <span class="category"><%= c.name %></span>

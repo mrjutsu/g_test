@@ -2,6 +2,7 @@
 <div class="left-content">
   <%= link_to 'Editar Categoría', edit_category_path( @category.slug ) %>
   <h3><%= @category.name %></h3>
+  <p>Creado pro: <%= link_to @category.user.name, profile_path( @category.user_id ) %></p>
   <p><%= count_messages( @category ) %></p>
 </div>
 <div class="main-content">
