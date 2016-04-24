@@ -1,6 +1,9 @@
 <article class="post">
   <span><%= message.user.name.nil? ? 'Nombre no disponible' : ( link_to message.user.name, profile_path( message.user_id ) ) %></span>
-  <span></span>
+  <span><%= message.groups.empty? ? '' : 'Compartido en: ' %></span>
+  <% posted_to(message).each do |g| %>
+    <span><%= link_to g.name, group_path( g.slug ) %></span>
+  <% end %>
   <% message.categories.each do |c| %>
     <span class="category"><%= c.name %></span>
   <% end %>

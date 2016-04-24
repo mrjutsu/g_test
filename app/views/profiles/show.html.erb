@@ -2,7 +2,7 @@
   <!-- botones -->
 </div>
 <div class="main-content">
-  <h2><%= @user.name %></h2>
+  <h2><%= @user.name.nil? ? 'Nombre No Disponible' : @user.name %></h2>
   <p><%= @user.email %></p>
-  <p><%= @user.bio %></p>
+  <p><%= @user.bio.nil? ? 'Bio No Disponible' : @user.bio %></p>
 </div>
