@@ -5,7 +5,7 @@
     <span><%= link_to g.name, group_path( g.slug ) %></span>
   <% end %>
   <% message.categories.each do |c| %>
-    <span class="category"><%= c.name %></span>
+    <span class="category"><%= link_to c.name, category_path( c.slug ) %></span>
   <% end %>
   <%= message.body.html_safe %>
   <p><%= time_ago_in_words(message.created_at) %></p>

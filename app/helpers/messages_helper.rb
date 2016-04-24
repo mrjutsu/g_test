@@ -6,7 +6,7 @@ module MessagesHelper
       grupos
     else
       current_user.joined_groups.each do |g|
-        message.groups.include? g ? grupos.push(g) : ''
+        ( message.groups.include? g ) ? grupos.push(g) : ''
       end
       grupos
     end

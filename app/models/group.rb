@@ -11,6 +11,7 @@ class Group < ApplicationRecord
   has_many :participants, through: :users_groups, source: :user
 
   validates :name, presence: { message: 'El grupo debe tener un nombre.' }
+  validates :name, uniqueness: { message: 'Ya hay un grupo con ese nombre.' }
 
   after_create do
     self.join_creator
