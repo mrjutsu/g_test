@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :profiles, only: :show
 
   resources :messages, only: [:new, :create, :index]
+
   resources :categories
 
   resources :groups do
