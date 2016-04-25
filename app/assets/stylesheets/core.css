@@ -38,6 +38,47 @@ h2{
   text-align: center;
   margin: 0 26%;
 }
+.feed{
+  margin: 0 auto;
+  width: 95%;
+}
+.message-user{
+  margin: 10px 20px;
+  padding: 0 0;
+}
+.shared{
+  width: 90%;
+  margin: 0 20px;
+  font-size: 1.4rem;
+}
+.categories{
+  width: 90%;
+  margin: 10px 20px;
+}
+.category{
+  background-color: grey;
+  border-radius: 10px;
+}
+.category a{
+  color: white;
+}
+.message-body{
+  padding: 0 0;
+  margin: 0 0;
+  width: 100%;
+  text-align: justify;
+}
+.posted-ago{
+  display: inline-block;
+  margin: 10px 20px;
+}
+.post{
+  border-style: solid;
+  border-width: 2px;
+  border-color: grey;
+  border-radius: 10px;
+  margin: 20px 0;
+}
 
 @media (min-width: 768px) {
 }

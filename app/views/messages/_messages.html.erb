@@ -1,12 +1,25 @@
 <article class="post">
-  <span><%= message.user.name.nil? ? 'Nombre no disponible' : ( link_to message.user.name, profile_path( message.user_id ) ) %></span>
-  <span><%= message.groups.empty? ? '' : 'Compartido en: ' %></span>
-  <% posted_to(message).each do |g| %>
-    <span><%= link_to g.name, group_path( g.slug ) %></span>
+  <h4 class="message-user"><%= message.user.name.nil? ? 'Nombre no disponible' : ( link_to message.user.name, profile_path( message.user_id ) ) %></h4>
+  <br>
+  <% unless message.groups.empty? %>
+    <div class="shared">
+      <%= fa_icon "bullhorn" %>
+      <span>&nbsp;&nbsp;<%= message.groups.empty? ? '' : "Compartido en:" %></span>
+      <% posted_to(message).each do |g| %>
+        <span class="group-span"><strong><%= link_to g.name, group_path( g.slug ) %>&nbsp;&nbsp;&nbsp;</strong></span>
+      <% end %>
+    </div>
   <% end %>
-  <% message.categories.each do |c| %>
-    <span class="category"><%= link_to c.name, category_path( c.slug ) %></span>
+  <% unless message.categories.empty? %>
+    <div class="categories">
+      <%= fa_icon "tags" %>
+      <% message.categories.each do |c| %>
+        <span class="category">&nbsp;<%= link_to c.name, category_path( c.slug ) %>&nbsp;</span>
+      <% end %>
+    </div>
   <% end %>
-  <%= message.body.html_safe %>
-  <p><%= time_ago_in_words(message.created_at) %></p>
+  <div class="message-body">
+    <%= message.body.html_safe %>
+  </div>
+  <span class="posted-ago">Posteado hace: <%= time_ago_in_words(message.created_at) %></span>
 </article>
