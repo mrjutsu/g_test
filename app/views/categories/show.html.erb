@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 <div class="left-content">
-  <%= link_to 'Editar Categoría', edit_category_path( @category.slug ) %>
-  <h3><%= @category.name %></h3>
+  <%= link_to 'Editar Categoría', edit_category_path( @category.slug ), class: "btn btn-primary btn-lg top-btn" %>
+  <h3 class="group-name"><%= @category.name %></h3>
   <p>Creado pro: <%= link_to @category.user.name, profile_path( @category.user_id ) %></p>
-  <p><%= count_messages( @category ) %></p>
+  <p><%= fa_icon "users" %>&nbsp;<%= count_messages( @category ) %></p>
 </div>
 <div class="main-content">
   <%= render partial: 'messages/messages', collection: @messages, as: :message %>

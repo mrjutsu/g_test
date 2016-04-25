@@ -13,8 +13,10 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.text_field :name, class: "form-control", placeholder: "Nombre Del Grupo" %>
+    <%= f.text_field :name, class: "form-control input-lg", placeholder: "Nombre Del Grupo" %>
   </div>
 
-  <%= f.submit 'Crear Grupo', class: "btn btn-success" %>
+  <% if params[:action] == "new" %>
+    <%= f.submit 'Crear Grupo', class: "btn btn-success" %>
+  <% end %>
 <% end %>

@@ -1,5 +1,5 @@
-<h1>Editing Group</h1>
+<h2 class="h2">Editar Grupo</h2>
 
 <%= render 'form', group: @group %>
 
-<%= link_to 'Eliminar Grupo', group_path( @group.slug ), method: :delete, data: { confirm: "¿Seguro? Esto eliminará el grupo." } %>
+<%= link_to 'Eliminar Grupo', group_path( @group.slug ), method: :delete, class: "btn btn-lg btn-danger submit-btn", data: { confirm: "¿Seguro? Esto eliminará el grupo." } %>

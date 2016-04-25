@@ -16,5 +16,7 @@
     <%= f.text_field :name, class: "form-control", placeholder: "Nombre De La Categoría" %>
   </div>
 
-  <%= f.submit 'Crear Categoría', class: "btn btn-success" %>
+  <% if params[:action] == "new" %>
+    <%= f.submit 'Crear Categoría', class: "btn btn-success" %>
+  <% end %>
 <% end %>

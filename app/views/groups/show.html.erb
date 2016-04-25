@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 <div class="left-content">
-  <%= link_to 'Editar Grupo', edit_group_path( @group.slug ) %>
-  <h3><%= @group.name %></h3>
+  <%= link_to 'Editar Grupo', edit_group_path( @group.slug ), class: "btn btn-primary btn-lg top-btn" %>
+  <h3 class="group-name"><%= @group.name %></h3>
   <p>Creado por: <%= link_to @group.user.name, profile_path( @group.user_id ) %></p>
-  <p><%= count_users( @group ) %></p>
+  <p><%= fa_icon "users" %>&nbsp;<%= count_users( @group ) %></p>
   <%= join_leave_group( @group ) %>
 </div>
 <div class="main-content">

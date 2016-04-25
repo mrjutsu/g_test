@@ -36,7 +36,7 @@ h2{
 }
 .submit-btn{
   text-align: center;
-  margin: 0 26%;
+  margin: 0 25%;
 }
 .feed{
   margin: 0 auto;
@@ -78,6 +78,15 @@ h2{
   border-color: grey;
   border-radius: 10px;
   margin: 20px 0;
+}
+.top-btn, .bot-btn{
+  margin: 0 26%;
+}
+.group-name{
+  text-align: center;
+}
+.main-content .post{
+  margin: 10px 5px;
 }
 
 @media (min-width: 768px) {

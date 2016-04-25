@@ -22,9 +22,9 @@ module GroupsHelper
 
   def join_leave_group group
     if current_user.joined_groups.include? group
-      link_to 'Salir Del Grupo', leave_group_path( group.slug ), method: :delete
+      link_to 'Salir Del Grupo', leave_group_path( group.slug ), method: :delete, class: "btn btn-danger bot-btn"
     else
-      link_to 'Unirse Al Grupo', join_group_path( group.slug ), method: :post
+      link_to 'Unirse Al Grupo', join_group_path( group.slug ), method: :post, class: "btn btn-success bot-btn"
     end
   end
 

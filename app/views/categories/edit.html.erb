@@ -1,5 +1,5 @@
-<h1>Editing Category</h1>
+<h2 class="h2">Editar Grupo</h2>
 
 <%= render 'form', category: @category %>
 
-<%= link_to 'Eliminar Categoría', category_path( @category ), method: :delete, data: { confirm: "¿Seguro? Esto eliminará la categoría." } %>
+<%= link_to 'Eliminar Categoría', category_path( @category ), method: :delete, class: "btn btn-lg btn-danger submit-btn", data: { confirm: "¿Seguro? Esto eliminará la categoría." } %>
