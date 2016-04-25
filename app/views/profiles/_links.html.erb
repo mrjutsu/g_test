@@ -1,0 +1,5 @@
+<div class="btn-group btn-group-justified left-content">
+  <%= link_to 'Perfil', profile_path( @user.id ), class: "btn btn-default #{params[:action] == 'show' ? 'active' : ''} " %>
+  <%= link_to 'Grupos', groups_profile_path( @user.id ), class: "btn btn-default #{params[:action] == 'groups' ? 'active' : ''} " %>
+  <%= link_to 'Categorías', categories_profile_path( @user.id ), class: "btn btn-default #{params[:action] == 'categories' ? 'active' : ''} " %>
+</div>

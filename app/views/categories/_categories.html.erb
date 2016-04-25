@@ -1,4 +1,5 @@
-<article class="">
-  <p><%= link_to category.name, category_path(category.slug) %></p>
-  <p><%= count_messages(category) %></p>
+<article>
+  <h3><%= link_to category.name, category_path(category.slug) %></h3>
+  <%= fa_icon "comments-o" %>
+  <%= count_messages(category) %>
 </article>

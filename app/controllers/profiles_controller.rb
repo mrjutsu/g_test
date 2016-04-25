@@ -4,6 +4,15 @@ class ProfilesController < ApplicationController
   def show
   end
 
+  def groups
+    @groups = @user.groups
+    @joined_groups = @user.joined_groups
+  end
+
+  def categories
+    @categories = @user.categories
+  end
+
   private
 
   def set_profile

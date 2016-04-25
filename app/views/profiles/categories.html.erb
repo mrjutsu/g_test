@@ -1,0 +1,11 @@
+<div class="profile">
+  <%= render partial: 'profiles/links' %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Categorías creadas</h3>
+    </div>
+    <div class="panel-body">
+      <%= render partial: 'categories/categories', collection: @categories, as: :category %>
+    </div>
+  </div>
+</div>

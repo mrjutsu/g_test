@@ -1,8 +1,8 @@
-<div class="left-content">
-  <!-- botones -->
-</div>
-<div class="main-content">
-  <h2><%= @user.name.nil? ? 'Nombre No Disponible' : @user.name %></h2>
-  <p><%= @user.email %></p>
-  <p><%= @user.bio.nil? ? 'Bio No Disponible' : @user.bio %></p>
+<div class="profile">
+  <%= render partial: 'profiles/links' %>
+  <div class="main-content">
+    <h2 class="user-name"><%= @user.name.nil? ? 'Nombre No Disponible' : @user.name %></h2>
+    <p class="user-email"><%= @user.email %></p>
+    <p class="user-bio"><%= @user.bio.nil? ? 'Bio No Disponible' : @user.bio %></p>
+  </div>
 </div>

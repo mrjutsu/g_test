@@ -1,5 +1,11 @@
-<article class="">
-  <p><%= link_to group.name, group_path(group.slug) %></p>
-  <p><%= count_users(group) %></p>
-  <p><%= group_messages(group) %></p>
+<article>
+  <h3><%= link_to group.name, group_path(group.slug) %></h3>
+  <%= fa_icon "users" %>
+  <%= count_users(group) %>
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  <%= fa_icon "comments-o" %>
+  <%= group_messages(group) %>
 </article>

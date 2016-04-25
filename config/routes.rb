@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :profiles, only: :show
+  resources :profiles, only: :show do
+    member do
+      get :groups, to: 'profiles#groups'
+      get :categories, to: 'profiles#categories'
+    end
+  end
 
   resources :messages, only: [:new, :create, :index]
 
