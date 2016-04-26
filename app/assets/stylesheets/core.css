@@ -2,6 +2,13 @@ h2{
   text-align: center;
   padding: 20px 0;
 }
+a{
+  text-decoration: none !important;
+}
+a:visited{
+  color: inherit !important;
+}
+
 .btns{
   margin: 25px 0;
   text-align: center;
@@ -29,14 +36,12 @@ h2{
   font-size: 1.2rem;
 }
 .user-bio{
-  margin: 20px 10px;
-  text-align: center;
-  text-align: justify;
+  margin: 20px 0;
   font-size: 1.6rem;
 }
-.submit-btn{
-  text-align: center;
-  margin: 0 25%;
+.center-btn{
+  display: block;
+  margin: 0 auto;
 }
 .feed{
   margin: 0 auto;
@@ -60,7 +65,7 @@ h2{
   border-radius: 10px;
 }
 .category a{
-  color: white;
+  color: white !important;
 }
 .message-body{
   padding: 0 0;
@@ -80,7 +85,7 @@ h2{
   margin: 20px 0;
 }
 .top-btn, .bot-btn{
-  margin: 0 26%;
+  width: 170px;
 }
 .group-name{
   text-align: center;
@@ -95,8 +100,18 @@ h2{
   margin: 20px 10px;
   text-align: center;
 }
+.groups article{
+  padding: 1px 20px;
+  height: 100px;
+}
+.groups article:nth-child(2n){
+  background-color: #DCDCDC;
+}
 
 @media (min-width: 768px) {
+  .center-btn{
+    margin: 0 40%;
+  }
 }
 @media (min-width: 992px) {
 }

@@ -1,5 +1,5 @@
 <div class="left-content">
-  <%= link_to 'Editar Categoría', edit_category_path( @category.slug ), class: "btn btn-primary btn-lg top-btn" %>
+  <%= link_to 'Editar Categoría', edit_category_path( @category.slug ), class: "btn btn-primary btn-lg top-btn center-btn" %>
   <h3 class="group-name"><%= @category.name %></h3>
   <p>Creado pro: <%= link_to @category.user.name, profile_path( @category.user_id ) %></p>
   <p><%= fa_icon "users" %>&nbsp;<%= count_messages( @category ) %></p>
