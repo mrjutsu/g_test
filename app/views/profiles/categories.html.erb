@@ -5,7 +5,11 @@
       <h3 class="panel-title">Categorías creadas</h3>
     </div>
     <div class="panel-body">
-      <%= render partial: 'categories/categories', collection: @categories, as: :category %>
+      <% if @categories.empty? %>
+        <p class="text-center">No hay información para mostrar.</p>
+      <% else%>
+        <%= render partial: 'categories/categories', collection: @categories, as: :category %>
+      <% end %>
     </div>
   </div>
 </div>
