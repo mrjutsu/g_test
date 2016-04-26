@@ -88,6 +88,13 @@ h2{
 .main-content .post{
   margin: 10px 5px;
 }
+.cat-checks{
+  margin: 20px 10px;
+}
+.visibility{
+  margin: 20px 10px;
+  text-align: center;
+}
 
 @media (min-width: 768px) {
 }

@@ -13,10 +13,10 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.text_field :name, class: "form-control", placeholder: "Nombre De La Categoría" %>
+    <%= f.text_field :name, class: "form-control input-lg", placeholder: "Nombre De La Categoría" %>
   </div>
 
   <% if params[:action] == "new" %>
-    <%= f.submit 'Crear Categoría', class: "btn btn-success" %>
+    <%= f.submit 'Crear Categoría', class: "btn btn-success btn-lg submit-btn" %>
   <% end %>
 <% end %>

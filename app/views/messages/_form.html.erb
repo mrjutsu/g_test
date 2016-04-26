@@ -17,49 +17,49 @@
   </div>
 
   <h3>Categorías</h3>
-  <%= f.fields_for :messages_categories, Category.all do |c| %>
-    <div class="checkbox">
-      <label class="checkbox-inline">
-        <%= c.check_box :category_id, { checked: @message.categories.pluck(:id).include?(c.object.id) }, c.object.id, nil %>
-        <%= c.object.name %>
-      </label>
-    </div>
-  <% end %>
-
-  <h3>Visibilidad</h3>
-  <div class="radio-inline">
-    <label>
-      <%= f.radio_button :privacy, 'visible' %>
-      Público
-    </label>
-  </div>
-  <div class="radio-inline">
-    <label>
-      <%= f.radio_button :privacy, 'invisible' %>
-      Privado
-    </label>
-  </div>
-  <div class="radio-inline">
-    <label>
-      <%= f.radio_button :privacy, 'groups' %>
-      Grupos
-    </label>
-  </div>
-  <div class="groups-div" style="display:none;">
-    <h3>Grupos</h3>
-    <%= f.fields_for :groups_messages, current_user.joined_groups do |g| %>
-      <div class="checkbox groups-ck">
+  <div class="cat-checks">
+    <%= f.fields_for :messages_categories, Category.all do |c| %>
+      <div class="checkbox">
         <label class="checkbox-inline">
-          <%= g.check_box :group_id, { checked: @message.groups.pluck(:id).include?(g.object.id) }, g.object.id, nil %>
-          <%= g.object.name %>
+          <%= c.check_box :category_id, { checked: @message.categories.pluck(:id).include?(c.object.id) }, c.object.id, nil %>
+          <%= c.object.name %>
         </label>
       </div>
     <% end %>
   </div>
 
-  <!-- <div class="field">
-    <%#= f.number_field :privacy %>
-  </div> -->
+  <h3>Visibilidad</h3>
+  <div class="visibility">
+    <div class="radio-inline">
+      <label>
+        <%= f.radio_button :privacy, 'visible' %>
+        Público
+      </label>
+    </div>
+    <div class="radio-inline">
+      <label>
+        <%= f.radio_button :privacy, 'invisible' %>
+        Privado
+      </label>
+    </div>
+    <div class="radio-inline">
+      <label>
+        <%= f.radio_button :privacy, 'groups' %>
+        Grupos
+      </label>
+    </div>
+    <div class="groups-div" style="display:none;">
+      <h3>Grupos</h3>
+      <%= f.fields_for :groups_messages, current_user.joined_groups do |g| %>
+        <div class="checkbox">
+          <label class="checkbox-inline">
+            <%= g.check_box :group_id, { checked: @message.groups.pluck(:id).include?(g.object.id) }, g.object.id, nil %>
+            <%= g.object.name %>
+          </label>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
-  <%= f.submit 'Guardar', class: "btn btn-success" %>
+  <%= f.submit 'Guardar', class: "btn btn-success btn-lg submit-btn" %>
 <% end %>
