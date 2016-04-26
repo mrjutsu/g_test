@@ -32,7 +32,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'puma'
-gem 'devise', git: 'git@github.com:plataformatec/devise.git'
+gem 'devise', git: "https://github.com/plataformatec/devise.git"
 gem 'friendly_id', '~> 5.1.0'
 gem "twitter-bootstrap-rails"
 gem 'font-awesome-rails'
