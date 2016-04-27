@@ -1,9 +1,13 @@
 <div class="left-content">
   <%= link_to 'Editar Categoría', edit_category_path( @category.slug ), class: "btn btn-primary btn-lg top-btn center-btn" %>
-  <h3 class="group-name"><%= @category.name %></h3>
-  <p>Creado pro: <%= link_to @category.user.name, profile_path( @category.user_id ) %></p>
+  <h3 class="group-name"><%= @category.name.capitalize %></h3>
+  <p>Creado por: <%= link_to @category.user.show_name, profile_path( @category.user_id ) %></p>
   <p><%= fa_icon "comments-o" %>&nbsp;<%= count_messages( @category ) %></p>
 </div>
 <div class="main-content">
-  <%= render partial: 'messages/messages', collection: @messages, as: :message %>
+  <% if @messages.empty? %>
+    <p class="text-center">No hay mensajes en esta categoría</p>
+  <% else %>
+    <%= render partial: 'messages/messages', collection: @messages, as: :message %>
+  <% end %>
 </div>

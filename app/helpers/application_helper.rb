@@ -7,11 +7,7 @@ module ApplicationHelper
   end
 
   def nav_name
-    if current_user.name.nil?
-      'Bienvenido/a'
-    else
-      current_user.name
-    end
+    current_user.show_name
   end
 
 end

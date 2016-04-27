@@ -11,4 +11,12 @@ class User < ApplicationRecord
   has_many :users_groups
   has_many :joined_groups, through: :users_groups, source: :group
 
+  def show_name
+    if ( self.name.nil? || self.name.empty? )
+      'Nombre No Disponible'
+    else
+      self.name
+    end
+  end
+
 end

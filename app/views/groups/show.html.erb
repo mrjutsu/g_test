@@ -1,10 +1,14 @@
 <div class="left-content">
   <%= link_to 'Editar Grupo', edit_group_path( @group.slug ), class: "btn btn-primary btn-lg top-btn center-btn" %>
-  <h3 class="group-name"><%= @group.name %></h3>
-  <p>Creado por: <%= link_to @group.user.name, profile_path( @group.user_id ) %></p>
+  <h3 class="group-name"><%= @group.name.capitalize %></h3>
+  <p>Creado por: <%= link_to @group.user.show_name, profile_path( @group.user_id ) %></p>
   <p><%= fa_icon "users" %>&nbsp;<%= count_users( @group ) %></p>
   <%= join_leave_group( @group ) %>
 </div>
 <div class="main-content">
-  <%= render partial: 'messages/messages', collection: @messages, as: :message %>
+  <% if @messages.empty? %>
+    <p class="text-center">No hay mensajes en este grupo</p>
+  <% else %>
+    <%= render partial: 'messages/messages', collection: @messages, as: :message %>
+  <% end %>
 </div>

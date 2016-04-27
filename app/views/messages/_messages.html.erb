@@ -1,5 +1,5 @@
 <article class="post">
-  <h4 class="message-user"><%= message.user.name.nil? ? 'Nombre no disponible' : ( link_to message.user.name, profile_path( message.user_id ) ) %></h4>
+  <h4 class="message-user"><%= link_to message.user.show_name, profile_path( message.user_id ) %></h4>
   <br>
   <% unless message.groups.empty? %>
     <div class="shared">

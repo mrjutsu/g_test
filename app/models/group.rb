@@ -10,7 +10,7 @@ class Group < ApplicationRecord
   has_many :users_groups, dependent: :destroy
   has_many :participants, through: :users_groups, source: :user
 
-  validates :name, presence: { message: 'El grupo debe tener un nombre.' }, uniqueness: { message: 'Ya hay un grupo con ese nombre.', case_sensitive: false }
+  validates :name, presence: { message: 'El grupo debe tener un nombre.' }, uniqueness: { message: 'Ya hay un grupo con ese nombre.', case_sensitive: false }, format: { with: /[a-zA-Z0-9]/ }
 
   after_create do
     self.join_creator

@@ -22,7 +22,7 @@
       <div class="checkbox">
         <label class="checkbox-inline">
           <%= c.check_box :category_id, { checked: @message.categories.pluck(:id).include?(c.object.id) }, c.object.id, nil %>
-          <%= c.object.name %>
+          <%= c.object.name.capitalize %>
         </label>
       </div>
     <% end %>
@@ -50,13 +50,17 @@
     </div>
     <div class="groups-div" style="display:none;">
       <h3>Grupos</h3>
-      <%= f.fields_for :groups_messages, current_user.joined_groups do |g| %>
-        <div class="checkbox">
-          <label class="checkbox-inline">
-            <%= g.check_box :group_id, { checked: @message.groups.pluck(:id).include?(g.object.id) }, g.object.id, nil %>
-            <%= g.object.name %>
-          </label>
-        </div>
+      <% if current_user.joined_groups.empty? %>
+        <p class="text-center">No haces parte de ningún grupo</p>
+      <% else %>
+        <%= f.fields_for :groups_messages, current_user.joined_groups do |g| %>
+          <div class="checkbox">
+            <label class="checkbox-inline">
+              <%= g.check_box :group_id, { checked: @message.groups.pluck(:id).include?(g.object.id) }, g.object.id, nil %>
+              <%= g.object.name.capitalize %>
+            </label>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>

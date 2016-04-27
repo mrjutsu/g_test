@@ -1,8 +1,8 @@
 <div class="profile">
   <%= render partial: 'profiles/links' %>
   <div class="main-content">
-    <h2 class="user-name"><%= @user.name.nil? ? 'Nombre No Disponible' : @user.name %></h2>
+    <h2 class="user-name"><%= @user.show_name %></h2>
     <p class="user-email"><%= @user.email %></p>
-    <p class="text-center user-bio"><%= @user.bio.nil? ? 'Bio No Disponible' : @user.bio %></p>
+    <p class="user-bio"><%= @user.bio.nil? ? 'Bio No Disponible' : @user.bio %></p>
   </div>
 </div>

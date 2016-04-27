@@ -36,11 +36,18 @@ a:visited{
   font-size: 1.2rem;
 }
 .user-bio{
-  margin: 20px 0;
+  display: block;
+  margin: 20px auto;
+  text-align: justify;
   font-size: 1.6rem;
 }
 .center-btn{
   display: block;
+  margin: 0 auto;
+}
+.del-btn{
+  display: block;
+  width: 200px;
   margin: 0 auto;
 }
 .feed{
@@ -68,7 +75,8 @@ a:visited{
   color: white !important;
 }
 .message-body{
-  padding: 0 0;
+  display: block;
+  padding: 5px 30px;
   margin: 0 0;
   width: 100%;
   text-align: justify;
