@@ -6,7 +6,7 @@
       <%= fa_icon "bullhorn" %>
       <span>&nbsp;&nbsp;<%= message.groups.empty? ? '' : "Compartido en:" %></span>
       <% posted_to(message).each do |g| %>
-        <span class="group-span"><strong><%= link_to g.name, group_path( g.slug ) %>&nbsp;&nbsp;&nbsp;</strong></span>
+        <span class="group-span"><strong><%= link_to g.name.capitalize, group_path( g.slug ) %>&nbsp;&nbsp;&nbsp;</strong></span>
       <% end %>
     </div>
   <% end %>
@@ -14,7 +14,7 @@
     <div class="categories">
       <%= fa_icon "tags" %>
       <% message.categories.each do |c| %>
-        <span class="category">&nbsp;<%= link_to c.name, category_path( c.slug ) %>&nbsp;</span>
+        <span class="category">&nbsp;<%= link_to c.name.capitalize, category_path( c.slug ) %>&nbsp;</span>
       <% end %>
     </div>
   <% end %>
